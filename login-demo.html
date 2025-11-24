@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #ffffff;
+      padding: 24px 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #3f51b5;
+      color: white;
+      font-weight: 600;
+    }
+    #message {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    #message.success {
+      color: green;
+    }
+    #message.error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Demo Login</h1>
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input id="username" name="username" />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+
+      <button type="submit">Login</button>
+      <p id="message"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Hardcoded valid credentials
+      if (username === 'admin' && password === 'Admin@123') {
+        message.textContent = 'Login successful';
+        message.className = 'success';
+      } else {
+        message.textContent = 'Invalid username or password';
+        message.className = 'error';
+      }
+    });
+  </script>
+</body>
+</html>

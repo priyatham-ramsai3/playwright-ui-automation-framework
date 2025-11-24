@@ -1,0 +1,5 @@
+[
+  { "username": "admin", "password": "Admin@123", "expected": "Login successful" },
+  { "username": "abc", "password": "xyz", "expected": "Invalid username or password" },
+  { "username": "", "password": "", "expected": "Invalid username or password" }
+]
